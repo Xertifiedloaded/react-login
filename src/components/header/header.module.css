@@ -1,0 +1,12 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+  
+}
+nav{
+    display: flex;
+    gap: 20px;
+}
+a{
+  text-decoration: none;
+}
