@@ -13,11 +13,11 @@ const Landing = () => {
   
   const handleEmail = (e) => {
     setEmail(e.target.value)
-    console.log(email)
+    // console.log(email)
   }
   const handlePassword = (e) => {
     setPassword(e.target.value)
-    console.log(password)
+    // console.log(password)
   }
 
   const handleSubmit = async (e) => {
@@ -25,7 +25,7 @@ const Landing = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential)
+        // console.log(userCredential)
         navigate('/account')
       }).catch((error) => {
         console.log(error)

@@ -9,11 +9,11 @@ const SignUp = () => {
   const [password, setPassword] = useState("")
   const handleEmail = (e) => {
     setEmail(e.target.value)
-    console.log(email)
+    // console.log(email)
   }
   const handlePassword = (e) => {
     setPassword(e.target.value)
-    console.log(password)
+    // console.log(password)
   }
 
   const handleSubmit = async (e) => {
@@ -21,7 +21,7 @@ const SignUp = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential)
+        // console.log(userCredential)
       }).catch((error) => {
         console.log(error)
       })
