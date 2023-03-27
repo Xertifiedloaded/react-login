@@ -10,11 +10,10 @@ const MainLayout = () => {
             <AuthContextProvider>
                 <Header />
                 <Outlet />
-                <AuthDetails/>
             </AuthContextProvider>
            
         </>
     )
 }
 
-export default MainLayout
+export default MainLayout;

@@ -5,7 +5,7 @@ import { auth } from '../../firebase'
 import { useNavigate } from 'react-router-dom'
 
 const AuthDetails = () => {
-
+const navigate=useNavigate()
     const [user, setUser] = useState(null)
     useEffect(() => {
         const listen = onAuthStateChanged(auth, (user) => {
@@ -23,6 +23,7 @@ const AuthDetails = () => {
     const UserSignOut = () => {
         signOut(auth).then(() => {
             console.log("sign out successful")
+            navigate('/login')
         }).catch((error => console.log(error)))
     }
     return (
@@ -31,13 +32,13 @@ const AuthDetails = () => {
                 {
                 user ?
                     <div>
-                        <p>welcome `${user.email}` </p>
+                           {`welcome ${user.email}`}
                         <p>hi</p>
                     </div> : <p>logged out</p>
                 }
             </div>
             <button onClick={UserSignOut}>
-                sign out
+                signout
             </button>
         </>
     )

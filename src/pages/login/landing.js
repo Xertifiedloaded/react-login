@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import classes from './landing.module.css'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase';
@@ -25,7 +25,7 @@ const Landing = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // console.log(userCredential)
+        console.log(userCredential)
         navigate('/account')
       }).catch((error) => {
         console.log(error)
@@ -38,6 +38,12 @@ const Landing = () => {
 
         <div className={classes.form}>
           <h1>Login To your account</h1>
+          <div className={classes.signup}>Don't have account 
+
+            <Link>
+              signup here
+            </Link>
+          </div>
           <form onSubmit={handleSubmit}>
             <div className={classes.input}>
               <input type="text" placeholder='enter Email' value={email} onChange={handleEmail} />
@@ -48,6 +54,7 @@ const Landing = () => {
             <button type='submit' >
               login
             </button>
+  
           </form>
         </div>
       </div>

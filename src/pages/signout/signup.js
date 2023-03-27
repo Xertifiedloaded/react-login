@@ -1,9 +1,11 @@
 import classes from './signup.module.css'
 import { useState, useContext } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 const SignUp = () => {
+  const navigate=useNavigate()
   const auth = getAuth();
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -21,6 +23,7 @@ const SignUp = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        navigate("/login")
         // console.log(userCredential)
       }).catch((error) => {
         console.log(error)
