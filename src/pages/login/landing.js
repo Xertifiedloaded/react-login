@@ -13,11 +13,9 @@ const Landing = () => {
   
   const handleEmail = (e) => {
     setEmail(e.target.value)
-    // console.log(email)
   }
   const handlePassword = (e) => {
     setPassword(e.target.value)
-    // console.log(password)
   }
 
   const handleSubmit = async (e) => {

@@ -5,13 +5,14 @@ import { auth } from '../../firebase'
 import { useNavigate } from 'react-router-dom'
 
 const AuthDetails = () => {
-const navigate=useNavigate()
+    const navigate = useNavigate()
     const [user, setUser] = useState(null)
+    
     useEffect(() => {
         const listen = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
-       
+
             } else {
                 setUser(null)
             }
@@ -30,11 +31,11 @@ const navigate=useNavigate()
         <>
             <div className={classes.main}>
                 {
-                user ?
-                    <div>
-                           {`welcome ${user.email}`}
-                        <p>hi</p>
-                    </div> : <p>logged out</p>
+                    user ?
+                        <div>
+                            {`welcome ${user.email}`}
+                            <p>hi</p>
+                        </div> : <p>logged out</p>
                 }
             </div>
             <button onClick={UserSignOut}>

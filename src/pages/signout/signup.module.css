@@ -17,7 +17,10 @@ input {
     height: 40px;
     padding: 10px;
 }
-
+.h6{
+    margin: 0;
+    padding: 0;
+}
 .form {
     width: 100%;
 }
